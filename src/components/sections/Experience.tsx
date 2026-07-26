@@ -3,7 +3,7 @@ export default function Experience() {
     {
       date: 'July 2018 - Present',
       title: 'CMIT Consultancy Group, Inc. (Concept Machine)',
-      role: 'Front-end Web Developer - 2018 - PRESENT\nUI Designer - 2023 - PRESENT',
+      role: 'Front-end Web Developer (2018-PRESENT)\nUI Designer (2023-PRESENT)',
       logo: '/images/experience/logo-concept-machine.png',
       logoHeightClass: 'h-16 lg:h-20',
       description: "Spearheaded end-to-end web design and front-end development for client projects, bridging the gap between aesthetics and technical execution over an 8-year tenure. Transitioned from a core Front-End Developer to a hybrid UI Designer and Developer role in 2023, driving projects from initial client discovery and UI/UX conceptualization to pixel-perfect, mobile-responsive implementations using Figma and Laravel Blade. Partnered closely with back-end engineers for seamless CMS integration while establishing cohesive design languages tailored to diverse client needs.\nAdditionally, I contributed to CMIT's sister company, Parlon Beauty and Wellness Technologies, Inc.—the first salon-aggregating platform in the Philippines. During its early development, I provided core UX insights for the Merchant Partner Hub and engineered the initial interfaces using Angular and Laravel Blade. In late 2024, I co-led the complete platform migration of the main Parlon website from Angular to Next.js, resolving critical technical debt and significantly improving loading performance after two years of rapid feature scaling."
@@ -26,7 +26,7 @@ export default function Experience() {
         <div className="absolute top-2 bottom-0 left-0 w-[2px] bg-gradient-to-b from-blue-400 via-sky-300 to-transparent"></div>
         
         {experiences.map((exp, i) => (
-          <div key={i} className="mb-24 last-of-type:mb-16! relative pl-10 md:pl-16 group">
+          <div key={i} className="not-last-of-type:mb-16! last-of-type:mb-8! relative pl-8 sm:pl-12 lg:pl-16 group">
             <div className="absolute -left-[9px] top-2 w-5 h-5">
               <div className="absolute inset-0 rounded-full border-2 border-blue-500 animate-ping opacity-75 group-hover:opacity-0 transition-opacity duration-300"></div>
               <div className="absolute inset-0 rounded-full bg-white border-[4px] border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)] group-hover:scale-125 transition-transform duration-300"></div>
@@ -39,7 +39,7 @@ export default function Experience() {
             <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
                <div className="max-w-3xl order-2 md:order-1">
                   <h3 className="text-3xl md:text-4xl font-serif mb-4 leading-tight text-slate-900">{exp.title}</h3>
-                  <div className="text-sm md:text-base font-extrabold font-expanded italic uppercase tracking-[0.15em] whitespace-pre-line leading-relaxed tracking-wide text-slate-500">
+                  <div className="text-xs sm:text-sm md:text-base font-extrabold font-expanded italic uppercase tracking-[0.15em] whitespace-pre-line leading-relaxed tracking-wide text-slate-500">
                     {exp.role}
                   </div>
                </div>
@@ -58,7 +58,7 @@ export default function Experience() {
                </div>
             </div>
             
-            <div className="space-y-5 text-base md:text-lg text-slate-600 max-w-4xl">
+            <div className="space-y-5 text-base/[1.625] md:text-base/[1.75] text-slate-600 max-w-3xl">
               {exp.description.split('\n').map((paragraph, pIndex) => (
                 paragraph.trim() ? <p key={pIndex}>{paragraph}</p> : null
               ))}
