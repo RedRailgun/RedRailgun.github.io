@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { CircleArrowOutUpRight, ChevronRight, ChevronLeft } from 'lucide-react';
+import { CircleArrowOutUpRight, ChevronRight, ChevronLeft, FileText } from 'lucide-react';
+import { CaseStudySheet } from '../CaseStudySheet';
 
 type Project = {
   id: string | number;
@@ -9,6 +10,7 @@ type Project = {
   techStack: string[];
   websiteLink?: string | null;
   projectFileLink?: string | null;
+  caseStudyFile?: string | null;
 };
 
 const mainProjects: Project[] = [
@@ -27,6 +29,7 @@ const mainProjects: Project[] = [
     techStack: ["Laravel", "TailwindCSS", "Figma"],
     websiteLink: "https://www.shakeysgroup.ph/",
     projectFileLink: "https://1drv.ms/f/c/09bb58503e896434/IgDkwd434YZ2RpP-iXkPywKPAU4AfDWhc73Uy0Ma4goHWXs?e=qcZUJA",
+    caseStudyFile: "/studies/shakeys-case-study.md",
   },
   {
     id: 3,
@@ -35,6 +38,7 @@ const mainProjects: Project[] = [
     techStack: ["Laravel", "TailwindCSS", "Figma"],
     websiteLink: null,
     projectFileLink: "https://1drv.ms/f/c/09bb58503e896434/IgD_urcyCpcoTYvbkIf4el3lAXDADlOz9l9YgPPe8Fng-i0?e=QfjKYf",
+    caseStudyFile: "/studies/the-yuchengco-centre-website-case-study.md",
   },
   {
     id: 4,
@@ -94,6 +98,7 @@ const gridProjects: Project[] = [
     techStack: ["Laravel", "TailwindCSS", "Figma"],
     websiteLink: "https://towersteelcorp.ph/",
     projectFileLink: "https://1drv.ms/f/c/09bb58503e896434/IgBb9kBN4sWMR4MGPJbeIGJOAaOW0uW39cFoV3kA6y-gq70?e=DpXpsz",
+    caseStudyFile: "/studies/tower-steel-corp-case-study.md",
   },
   {
     id: 10,
@@ -142,6 +147,7 @@ const gridProjects: Project[] = [
     techStack: ["WordPress", "Figma"],
     websiteLink: "https://cardinalsantos.com.ph",
     projectFileLink: "https://1drv.ms/f/c/09bb58503e896434/IgB4rBwR7x_JR7M83icNQ0rJAeC9DD6PrU60CFt4sBMKUrU?e=r5v33i",
+    caseStudyFile: "/studies/cardinal-santos-website-case-study.md",
   }
 ];
 
@@ -151,6 +157,7 @@ export default function Projects() {
   const moreCardRef = useRef<HTMLDivElement>(null);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState<string | null>(null);
 
   const handleScroll = () => {
     if (carouselRef.current) {
@@ -284,6 +291,11 @@ export default function Projects() {
                   VIEW SCREENSHOTS <ChevronRight className="w-4 h-4" />
                 </a>
               )}
+              {item.caseStudyFile && (
+                <button onClick={() => setSelectedCaseStudy(item.caseStudyFile!)} className="text-base font-condensed font-bold uppercase flex items-center gap-1 text-slate-500 hover:text-slate-900 transition-colors">
+                  VIEW CASE STUDY <ChevronRight className="w-4 h-4" />
+                </button>
+              )}
             </div>
           </div>
         ))}
@@ -336,11 +348,16 @@ export default function Projects() {
                 <span key={tech} className="text-sm font-normal px-2.5 py-1 border border-slate-300/60 squircle-1.5 text-slate-600 bg-white/40 backdrop-blur-sm">{tech}</span>
               ))}
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               {item.projectFileLink && (
                 <a href={item.projectFileLink} target="_blank" rel="noreferrer" className="text-base font-condensed font-bold uppercase flex items-center gap-1 text-slate-500 hover:text-slate-900 transition-colors">
                   VIEW SCREENSHOTS <ChevronRight className="w-4 h-4" />
                 </a>
+              )}
+              {item.caseStudyFile && (
+                <button onClick={() => setSelectedCaseStudy(item.caseStudyFile!)} className="text-base font-condensed font-bold uppercase flex items-center gap-1 text-slate-500 hover:text-slate-900 transition-colors">
+                  VIEW CASE STUDY <ChevronRight className="w-4 h-4" />
+                </button>
               )}
             </div>
           </div>
@@ -382,6 +399,12 @@ export default function Projects() {
           </button>
         </div>
       </div>
+
+      <CaseStudySheet 
+        isOpen={!!selectedCaseStudy} 
+        onClose={() => setSelectedCaseStudy(null)} 
+        fileUrl={selectedCaseStudy} 
+      />
     </section>
   );
 }

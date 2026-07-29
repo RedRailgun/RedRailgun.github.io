@@ -101,7 +101,7 @@ export default function Hero() {
         
         <div className="shrink-0 md:ms-auto relative md:px-6 xl:px-8">
           <div className="absolute inset-0 bg-gradient-to-tr from-sky-400 via-fuchsia-300 to-blue-400 opacity-30 blur-2xl rounded-full mix-blend-multiply animate-pulse" style={{ animationDuration: '4s' }}></div>
-          <div className="w-56 h-56 md:w-72 md:h-72 rounded-full p-2 bg-white/40 backdrop-blur-md border border-white/60 shadow-xl shadow-sky-900/5 relative z-10 overflow-hidden">
+          <div className="w-56 h-56 md:w-72 md:h-72 rounded-full p-2 bg-white/40 backdrop-blur-md border border-white/60 shadow-xl shadow-sky-900/5 relative z-10">
             <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-indigo-200 via-sky-200 to-fuchsia-200 relative group">
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 rounded-full overflow-hidden mix-blend-overlay z-10 pointer-events-none"></div>
               <div className="absolute -inset-4 bg-gradient-to-tr from-sky-400 via-purple-300 to-blue-400 opacity-40 blur-2xl group-hover:opacity-70 transition-opacity duration-1000 z-0"></div>
