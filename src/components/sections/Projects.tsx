@@ -47,6 +47,7 @@ const mainProjects: Project[] = [
     techStack: ["Laravel", "Bootstrap"],
     websiteLink: "https://villarica.net",
     projectFileLink: "https://1drv.ms/f/c/09bb58503e896434/IgA0ZIk-UFi7IIAJYmwAAAAAAQLvOKEJC6rvUa8DieKn-rA?e=ZWzAjG",
+	caseStudyFile: "/studies/villarica-website-case-study.md",
   }
 ];
 
