@@ -22,7 +22,3 @@ The redesign wasn't happening in a vacuum — it was a direct response to compet
 ## Outcome
 
 The result keeps Villarica's brand instantly recognizable — same colors, same fonts, same voice — while looking and functioning like a site built years ahead of the one it replaced. What used to be a flat grid of titles and one-line descriptions is now a set of fully fleshed-out service pages, wrapped in a glassmorphic visual language of gradients, blurs, and diamond-cut photography that gives Villarica a stronger visual footing against Palawan Express, on desktop and mobile alike.
-
----
-
-*Design direction informed by Villarica Pawnshop's existing brand guidelines and marketing materials.*
