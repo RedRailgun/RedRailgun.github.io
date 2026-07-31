@@ -11,6 +11,7 @@ type Project = {
   websiteLink?: string | null;
   projectFileLink?: string | null;
   caseStudyFile?: string | null;
+  caseStudyLabel?: string;
 };
 
 const mainProjects: Project[] = [
@@ -21,6 +22,8 @@ const mainProjects: Project[] = [
     techStack: ["Angular", "Laravel", "NextJS", "Figma"],
     websiteLink: "https://parlon.ph",
     projectFileLink: null,
+    caseStudyFile: '/studies/parlon-product-story.md',
+    caseStudyLabel: 'View Story',
   },
   {
     id: 2,
@@ -43,11 +46,11 @@ const mainProjects: Project[] = [
   {
     id: 4,
     title: "Villarica Pawnshop",
-    screenshot: "/images/projects/carousel/villarica.jpg",
+    screenshot: "/images/projects/carousel/villarica.png",
     techStack: ["Laravel", "Bootstrap"],
     websiteLink: "https://villarica.net",
     projectFileLink: "https://1drv.ms/f/c/09bb58503e896434/IgA0ZIk-UFi7IIAJYmwAAAAAAQLvOKEJC6rvUa8DieKn-rA?e=ZWzAjG",
-	caseStudyFile: "/studies/villarica-website-case-study.md",
+    caseStudyFile: "/studies/villarica-website-case-study.md",
   }
 ];
 
@@ -294,7 +297,7 @@ export default function Projects() {
               )}
               {item.caseStudyFile && (
                 <button onClick={() => setSelectedCaseStudy(item.caseStudyFile!)} className="text-base font-condensed font-bold uppercase flex items-center gap-1 text-slate-500 hover:text-slate-900 transition-colors">
-                  VIEW CASE STUDY <ChevronRight className="w-4 h-4" />
+                  {item.caseStudyLabel ? item.caseStudyLabel.toUpperCase() : 'VIEW CASE STUDY'} <ChevronRight className="w-4 h-4" />
                 </button>
               )}
             </div>
@@ -357,7 +360,7 @@ export default function Projects() {
               )}
               {item.caseStudyFile && (
                 <button onClick={() => setSelectedCaseStudy(item.caseStudyFile!)} className="text-base font-condensed font-bold uppercase flex items-center gap-1 text-slate-500 hover:text-slate-900 transition-colors">
-                  VIEW CASE STUDY <ChevronRight className="w-4 h-4" />
+                  {item.caseStudyLabel ? item.caseStudyLabel.toUpperCase() : 'VIEW CASE STUDY'} <ChevronRight className="w-4 h-4" />
                 </button>
               )}
             </div>
